@@ -11,6 +11,10 @@
   "dependencies": {
     "node-fetch": "^1.7.3"
   },
+  "repository": {
+    "url": "https://github.com/shardick/trucky-services-client-node", 
+    "type": "git"
+  },
   "homepage": "https://api.truckyapp.com",
   "keywords": [
     "TruckersMP", 
