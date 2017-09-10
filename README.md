@@ -1,0 +1,1 @@
+# Trucky App REST API client for node.js
