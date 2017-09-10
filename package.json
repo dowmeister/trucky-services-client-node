@@ -1,0 +1,22 @@
+{
+  "name": "trucky-services-client",
+  "version": "1.0.0",
+  "description": "Trucky APP REST API client",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Francesco 'ShArDiCk' Bramato",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^1.7.3"
+  },
+  "homepage": "https://api.truckyapp.com",
+  "keywords": [
+    "TruckersMP", 
+    "Trucky",
+    "Steam",
+    "ETS2"
+  ]
+
+}
