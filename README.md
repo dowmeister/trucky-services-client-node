@@ -8,7 +8,7 @@ For API response documentation please refer to **live documentation (http://api.
 
 ## Installation
 
-mpm install trucky-services-client --save-dev
+npm install trucky-services-client
 
 ## Usage
 
