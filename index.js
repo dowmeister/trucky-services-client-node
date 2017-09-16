@@ -1,19 +1,20 @@
 const fetch = require('node-fetch');
+
 /**
- *
- *
- * @class TruckyServices
+ * Trucky API client class
+ * @class
  */
 class TruckyAPIClient
 {
 
     /**
-     * Creates an instance of TruckyServices.
+     * Creates an instance of TruckyAPIClient.
      *
-     * @memberOf TruckyServices
+     * @memberOf TruckyAPIClient
      */
     constructor()
     {
+        /** @access private */
         this.config = {
             serviceUrl: 'https://api.truckyapp.com'
         }
@@ -22,10 +23,13 @@ class TruckyAPIClient
     /**
      *
      *
+     * @access private
      * @param {string} url
-     * @returns
+     * @ignore
+     * @async
+     * @returns {Promise}
      *
-     * @memberOf TruckyServices
+     * @memberOf TruckyAPIClient
      */
     async executeRequest(url, method = "GET", payload)
     {
@@ -33,34 +37,9 @@ class TruckyAPIClient
         {
             var promise = new Promise((resolve, reject) => {
 
-                /*var myHeaders = new {};
-                myHeaders.set('user-agent', 'TruckyAPIClient');
-
-                var myInit = {
-                    method: method,
-                    headers: myHeaders,
-                    mode: 'cors',
-                    cache: 'no-cache'
-                };*/
-
-                /*if (method == "POST") {
-                    //console.warn(payload);
-
-                    myInit
-                        .headers
-                        .set('Accept', 'application/json, text/plain, *//**');
-                    myInit
-                        .headers
-                        .set('Content-Type', 'application/json');
-
-                    myInit.body = JSON.stringify(payload);
-            }*/
-
-                console.log(url);
-
-                fetch(this.config.serviceUrl + url, { method: method }).then((response) => {
-                    return response.json()                  
-                }).then( (json) => {
+                fetch(this.config.serviceUrl + url, {method: method}).then((response) => {
+                    return response.json()
+                }).then((json) => {
                     resolve(json);
                 })
             });
@@ -76,12 +55,13 @@ class TruckyAPIClient
     }
 
     /**
+     * Resolve Steam Vanity Url returning Steam player data if found
      *
+     * @param {string} username Steam user vanity url
+     * @async
+     * @returns {Promise<TruckyAPIResponse>}
      *
-     * @param {string} username
-     * @returns
-     *
-     * @memberOf TruckyServices
+     * @memberOf TruckyAPIClient
      */
     async resolveVanityUrl(username)
     {
@@ -90,10 +70,11 @@ class TruckyAPIClient
     }
 
     /**
+     * Returns Steam Player data if found
      *
-     *
-     * @param {any} steamid
-     * @returns
+     * @param {string} steamid Steam User ID
+     * @async
+     * @returns {Promise<TruckyAPIResponse>}
      *
      * @memberOf TruckyServices
      */
@@ -103,57 +84,119 @@ class TruckyAPIClient
         return response;
     }
 
+    /**
+     * Get ETS2Map Points of interest
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @async
+     * @memberof TruckyAPIClient
+     */
     async pois()
     {
         var response = await this.executeRequest('/v2/map/pois');
         return response;
     }
 
+    /**
+     * Check TruckersMP player online status
+     *
+     * @param {number} playerID TruckersMP User ID
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async isOnline(playerID)
     {
         var response = await this.executeRequest('/v2/map/online?playerID=' + playerID);
         return response;
     }
 
+    /**
+     * Get Steam Friends
+     *
+     * @param {string} steamID Steam User ID
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async getFriends(steamID)
     {
         var response = await this.executeRequest('/v2/steam/getFriendsData?steamid=' + steamID);
         return response;
     }
 
-    /* news */
+    /**
+     * Get TruckersMP news feed from Steam RSS
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async news()
     {
         var response = await this.executeRequest('/v2/rss/truckersMP');
         return response;
     }
 
+    /**
+     * Get ETS2 News feed from Steam RSS
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async ets2News()
     {
         var response = await this.executeRequest('/v2/rss/ets2');
         return response;
     }
 
+    /**
+     * Get ATS News feed from Steam RSS
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async atsNews()
     {
         var response = await this.executeRequest('/v2/rss/ats');
         return response;
     }
 
+    /**
+     * Get TruckersMP current update info and current plugin version
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async update_info()
     {
         var response = await this.executeRequest('/v2/truckersmp/update_info');
         return response;
     }
 
-    /* events */
+    /**
+     * Get events and meetup from ETS2.com and truckers.events
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async events()
     {
         var response = await this.executeRequest('/v2/events');
         return response;
     }
 
-    /* tmpapi wrapper */
+    /**
+     * Get TruckersMP servers
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async servers()
     {
         var response = await this.executeRequest('/v2/truckersmp/servers');
@@ -161,30 +204,67 @@ class TruckyAPIClient
 
     }
 
+    /**
+     * Get TruckersMP game version info
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async game_version()
     {
         var response = await this.executeRequest('/v2/truckersmp/version');
         return response;
     }
 
+    /**
+     * Get TruckersMP game time
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async game_time()
     {
         var response = await this.executeRequest('/v2/truckersmp/time');
         return response;
     }
 
+    /**
+     * Get TruckersMP rules
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async rules()
     {
         var response = await this.executeRequest('/v2/truckersmp/rules');
         return response;
     }
 
+    /**
+     * Get TruckersMP player data
+     *
+     * @param {number} id TruckersMP User ID
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async player(id)
     {
         var response = await this.executeRequest('/v2/truckersmp/player?playerID=' + id);
         return response;
     }
 
+    /**
+     * Get TruckersMP player bans data
+     *
+     * @param {number} id TruckersMP User ID
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async bans(id)
     {
         var response = await this.executeRequest('/v2/truckersmp/bans?playerID=' + id);
@@ -194,11 +274,12 @@ class TruckyAPIClient
     /**
      * Search player by Steam ID, Steam Username or TruckersMP ID based on searchType parameter
      *
-     * @param {any} searchTerm
-     * @param {any} searchType
-     * @returns
+     * @param {string} searchTerm Search Term, can be TruckersMP User ID, Steam User ID or Steam Vanity url
+     * @param {string} searchType Can be "steamid", "truckersmpid", "steamusername"
+     * @async
+     * @returns {Promise<TruckyAPIResponse>}
      *
-     * @memberOf TruckersMPApi
+     * @memberOf TruckyAPIClient
      */
     async searchPlayer(searchTerm, searchType)
     {
@@ -254,17 +335,43 @@ class TruckyAPIClient
         return playerInfo;
     }
 
+    /**
+     * Get TruckersMP traffic data from traffic.krashnz.com
+     *
+     * @param {string} server TruckersMP Server short name
+     * @param {string} game Can be "ETS2" or "ATS"
+     * @async
+    * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     */
     async traffic(server, game)
     {
         var response = await this.executeRequest('/v2/traffic?server=' + server + '&game=' + game);
         return response;
     }
 
+    /**
+     * Get TruckersMP get traffic servers data from traffic.krashnz.com
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async traffic_servers()
     {
         var response = await this.executeRequest('/v2/traffic/servers');
         return response;
     }
+}
+
+/**
+ * Trucky API client response prototype
+ * @property {object} response
+ * @typedef {object} TruckyAPIResponse
+ * @class
+ */
+var TruckyAPIResponse = {
+    response: {}
 }
 
 module.exports = TruckyAPIClient;
