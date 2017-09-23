@@ -1,5 +1,7 @@
 # Trucky App REST API client for node.js
 
+[![Build Status](https://travis-ci.org/shardick/trucky-services-client-node.svg?branch=master)](https://travis-ci.org/shardick/trucky-services-client-node)
+
 [![npm version](https://badge.fury.io/js/trucky-services-client.svg)](https://badge.fury.io/js/trucky-services-client) 
 
 This package is the Trucky API client, complete gateway to TruckersMP, ETS2Map and Traffic data served from TruckersMP developers community (official and unofficial).
@@ -29,6 +31,10 @@ api.resolveVanityUrl("dowmeister").then( (response) => {
 });
 
 ```
+
+## Dependencies
+
+- [node-fetch](https://github.com/bitinn/node-fetch): A light-weight module that brings window.fetch to node.js and io.js
 
 # API
 
