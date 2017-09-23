@@ -1,3 +1,11 @@
 language: node_js
 node_js:
- - "node"
+- node
+deploy:
+  provider: npm
+  email: shardick@gmail.com
+  api_key:
+    secure: Pk9txuNVG25gIfIcK734wrrtXhf8gJX33Yemd8LLsZ+nfCgxl0uF65YjJHCNrlYrjKhJy4hnVcye3tJyNVeBCroJm+bx3AQzR275AG5Awuc7XsSzR0QK57y6k4xW59bijYbjoFkZ7yCMRGtwHMg42/zZcOientiCvHFOUjxHFclOfhkK0XVMQbswRH1NmRfyVtDti/ALTgnNqXOlMkIW8l9G6aTaWyPEV6spHm9cwSOWqs2CAT6q/OZP+xSHQtzdubwXJO6X9YDOdmPGjZtcRsSpVTvtnVrST4Al+RVV16NSmB5AHCG+uRdGc9cXgyofNGezJG2FCSyt2cBFDEorvrp+n5X8WRvrrE+R+WI68lGkdUUBpI4R1pSv4hxP97LBH+v3sbLKzGECuARssJ3ttDE8TWqapv/s8G9oRk0BCml6+8BelHdRUoV6qvghcdqK0TGcuiYNAtKlAjw2walFRWQD7lFn3oNVX/yFvajQeQ4/B0I5PepHQYpL2O6vPONlYQdjJWypf4XW6kbFWaYNVvLjyMtZBcBOWaI2yfEejQjf7F6GaKwOCv9xgHs9rc/ND/p6BeSUS0xl3mbRY//WIksD6QsRIFGGq+cXasHtm1Q+Drts7plJ7WW8eD0W+pMposmmDQYu0Jn3rcNzaWKT13zry3/qMG1hdh93J6hXUmo=
+  on:
+    tags: true
+    repo: shardick/trucky-services-client-node
