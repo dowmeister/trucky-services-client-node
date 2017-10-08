@@ -362,6 +362,30 @@ class TruckyAPIClient
         var response = await this.executeRequest('/v2/traffic/servers');
         return response;
     }
+
+    async wot_gallery_random()
+    {
+        var response = await this.executeRequest('/v2/wot/gallery/random');
+        return response;
+    }
+
+    async wot_gallery_editorspick()
+    {
+        var response = await this.executeRequest('/v2/wot/gallery/editorspick');
+        return response;
+    }
+
+    async wot_gallery_bestrated()
+    {
+        var response = await this.executeRequest('/v2/wot/gallery/bestrated');
+        return response;
+    }
+
+    async wot_gallery_mostviewed()
+    {
+        var response = await this.executeRequest('/v2/wot/gallery/mostviewed');
+        return response;
+    }
 }
 
 /**
