@@ -350,6 +350,12 @@ class TruckyAPIClient
         return response;
     }
 
+    async topTraffic(server, game)
+    {
+        var response = await this.executeRequest('/v2/traffic/top?server=' + server + '&game=' + game);
+        return response;
+    }
+
     /**
      * Get TruckersMP get traffic servers data from traffic.krashnz.com
      *
