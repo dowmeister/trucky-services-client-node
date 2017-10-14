@@ -392,6 +392,18 @@ class TruckyAPIClient
         var response = await this.executeRequest('/v2/wot/gallery/mostviewed');
         return response;
     }
+
+    async streams_twitch_ets2()
+    {
+        var response = await this.executeRequest('/v2/streams/twitch/ets2');
+        return response;
+    }
+
+    async streams_twitch_ats()
+    {
+        var response = await this.executeRequest('/v2/streams/twitch/ats');
+        return response;
+    }
 }
 
 /**
