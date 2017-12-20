@@ -369,54 +369,117 @@ class TruckyAPIClient
         return response;
     }
 
+    /**
+     * Get World Of Trucks Random Gallery
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async wot_gallery_random()
     {
         var response = await this.executeRequest('/v2/wot/gallery/random');
         return response;
     }
-
+    
+    /**
+     * Get World Of Trucks Editor's pick
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async wot_gallery_editorspick()
     {
         var response = await this.executeRequest('/v2/wot/gallery/editorspick');
         return response;
     }
 
+    /**
+     * Get World Of Trucks Best rated
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async wot_gallery_bestrated()
     {
         var response = await this.executeRequest('/v2/wot/gallery/bestrated');
         return response;
     }
 
+    /**
+     * Get World Of Trucks most viewed
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async wot_gallery_mostviewed()
     {
         var response = await this.executeRequest('/v2/wot/gallery/mostviewed');
         return response;
     }
 
+    /**
+     * Get current Twitch streams for ETS2
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async streams_twitch_ets2()
     {
         var response = await this.executeRequest('/v2/streams/twitch/ets2');
         return response;
     }
 
+    /**
+     * Get current Twitch streams for ATS
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async streams_twitch_ats()
     {
         var response = await this.executeRequest('/v2/streams/twitch/ats');
         return response;
     }
 
+    /**
+     * Get TruckersFM current listeners
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async truckersfm_listeners()
     {
         var response = await this.executeRequest('/v2/truckersfm/listeners');
         return response;
     }
 
+    /**
+     * Get TruckersFM current show
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async truckersfm_shows()
     {
         var response = await this.executeRequest('/v2/truckersfm/shows');
         return response;
     }
 
+    /**
+     * Get TruckersFM last played song 
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
     async truckersfm_lastPlayed()
     {
         var response = await this.executeRequest('/v2/truckersfm/lastPlayed');
