@@ -404,6 +404,24 @@ class TruckyAPIClient
         var response = await this.executeRequest('/v2/streams/twitch/ats');
         return response;
     }
+
+    async truckersfm_listeners()
+    {
+        var response = await this.executeRequest('/v2/truckersfm/listeners');
+        return response;
+    }
+
+    async truckersfm_shows()
+    {
+        var response = await this.executeRequest('/v2/truckersfm/shows');
+        return response;
+    }
+
+    async truckersfm_lastPlayed()
+    {
+        var response = await this.executeRequest('/v2/truckersfm/lastPlayed');
+        return response;
+    }
 }
 
 /**
