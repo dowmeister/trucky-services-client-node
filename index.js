@@ -485,6 +485,34 @@ class TruckyAPIClient
         var response = await this.executeRequest('/v2/truckersfm/lastPlayed');
         return response;
     }
+
+    /**
+     * Search TruckersMP player by username
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
+    async searchPlayerByTruckersMPUsername(query)
+    {
+        var response = await this.executeRequest('/v2/truckersmp/searchPlayer?query=' + query);
+        return response;
+    }
+
+    /**
+     * Get TruckersMP player complete information with online state and Steam profile data
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
+    async getPlayerInfoComplete(query)
+    {
+        var response = await this.executeRequest('/v2/trucky/player?query=' + query);
+        return response;
+    }
+
+
 }
 
 /**
