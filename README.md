@@ -71,6 +71,8 @@ api.resolveVanityUrl("dowmeister").then( (response) => {
     -   [truckersfm_shows](#truckersfm_shows)
     -   [truckersfm_lastPlayed](#truckersfm_lastplayed)
     -   [onlineList](#onlinelist)
+    -   [searchPlayerByTruckersMPUsername](#searchplayerbytruckersmpusername)
+    -   [getPlayerInfoComplete](#getplayerinfocomplete)
 -   [TruckyAPIResponse](#truckyapiresponse)
 
 ## TruckyAPIClient
@@ -282,10 +284,31 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 ### onlineList
 
 Get players online state by TruckersMP ids array
+Search TruckersMP player by username
 
 **Parameters**
 
 -   `ids`  
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[TruckyAPIResponse](#truckyapiresponse)>** 
+
+### searchPlayerByTruckersMPUsername
+
+Search TruckersMP Player by username
+
+**Parameters**
+
+-   `query`  
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[TruckyAPIResponse](#truckyapiresponse)>** 
+
+### getPlayerInfoComplete
+
+Get TruckersMP player complete information with online state and Steam profile data
+
+**Parameters**
+
+-   `query`  
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[TruckyAPIResponse](#truckyapiresponse)>** 
 

@@ -488,6 +488,7 @@ class TruckyAPIClient
 
     /**
      * Get players online state by TruckersMP ids array
+     * Search TruckersMP player by username
      *
      * @returns {Promise<TruckyAPIResponse>}
      * @memberof TruckyAPIClient
@@ -498,6 +499,34 @@ class TruckyAPIClient
         var response = await this.executeRequest('/v2/map/onlineList?ids=' + ids.join(','));
         return response;
     }
+
+    /**
+     * Search TruckersMP Player by username
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
+    async searchPlayerByTruckersMPUsername(query)
+    {
+        var response = await this.executeRequest('/v2/truckersmp/searchPlayer?query=' + query);
+        return response;
+    }
+
+    /**
+     * Get TruckersMP player complete information with online state and Steam profile data
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
+    async getPlayerInfoComplete(query)
+    {
+        var response = await this.executeRequest('/v2/trucky/player?query=' + query);
+        return response;
+    }
+
+
 }
 
 /**
