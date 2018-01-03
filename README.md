@@ -70,6 +70,7 @@ api.resolveVanityUrl("dowmeister").then( (response) => {
     -   [truckersfm_listeners](#truckersfm_listeners)
     -   [truckersfm_shows](#truckersfm_shows)
     -   [truckersfm_lastPlayed](#truckersfm_lastplayed)
+    -   [onlineList](#onlinelist)
 -   [TruckyAPIResponse](#truckyapiresponse)
 
 ## TruckyAPIClient
@@ -275,6 +276,16 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 ### truckersfm_lastPlayed
 
 Get TruckersFM last played song
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[TruckyAPIResponse](#truckyapiresponse)>** 
+
+### onlineList
+
+Get players online state by TruckersMP ids array
+
+**Parameters**
+
+-   `ids`  
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[TruckyAPIResponse](#truckyapiresponse)>** 
 

@@ -485,6 +485,19 @@ class TruckyAPIClient
         var response = await this.executeRequest('/v2/truckersfm/lastPlayed');
         return response;
     }
+
+    /**
+     * Get players online state by TruckersMP ids array
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
+    async onlineList(ids)
+    {
+        var response = await this.executeRequest('/v2/map/onlineList?ids=' + ids.join(','));
+        return response;
+    }
 }
 
 /**
