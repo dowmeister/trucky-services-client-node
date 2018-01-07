@@ -73,6 +73,7 @@ api.resolveVanityUrl("dowmeister").then( (response) => {
     -   [onlineList](#onlinelist)
     -   [searchPlayerByTruckersMPUsername](#searchplayerbytruckersmpusername)
     -   [getPlayerInfoComplete](#getplayerinfocomplete)
+    -   [ets2_cities](#ets2_cities)
 -   [TruckyAPIResponse](#truckyapiresponse)
 
 ## TruckyAPIClient
@@ -309,6 +310,12 @@ Get TruckersMP player complete information with online state and Steam profile d
 **Parameters**
 
 -   `query`  
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[TruckyAPIResponse](#truckyapiresponse)>** 
+
+### ets2_cities
+
+Get list of ETS2 cities, with coordinates and country
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[TruckyAPIResponse](#truckyapiresponse)>** 
 

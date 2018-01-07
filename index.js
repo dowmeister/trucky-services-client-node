@@ -526,6 +526,18 @@ class TruckyAPIClient
         return response;
     }
 
+     /**
+     * Get list of ETS2 cities, with coordinates and country
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
+    async ets2_cities()
+    {
+        var response = await this.executeRequest('/v2/map/cities/ets2');
+        return response;
+    }
 
 }
 
