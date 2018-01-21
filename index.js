@@ -539,6 +539,19 @@ class TruckyAPIClient
         return response;
     }
 
+    /**
+     * Get list of ATS cities, with coordinates and country
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
+    async ats_cities()
+    {
+        var response = await this.executeRequest('/v2/map/cities/ats');
+        return response;
+    }
+
 }
 
 /**

@@ -74,6 +74,7 @@ api.resolveVanityUrl("dowmeister").then( (response) => {
     -   [searchPlayerByTruckersMPUsername](#searchplayerbytruckersmpusername)
     -   [getPlayerInfoComplete](#getplayerinfocomplete)
     -   [ets2_cities](#ets2_cities)
+    -   [ats_cities](#ats_cities)
 -   [TruckyAPIResponse](#truckyapiresponse)
 
 ## TruckyAPIClient
@@ -316,6 +317,12 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 ### ets2_cities
 
 Get list of ETS2 cities, with coordinates and country
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[TruckyAPIResponse](#truckyapiresponse)>** 
+
+### ats_cities
+
+Get list of ATS cities, with coordinates and country
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[TruckyAPIResponse](#truckyapiresponse)>** 
 
