@@ -47,6 +47,7 @@ api.resolveVanityUrl("dowmeister").then( (response) => {
     -   [searchPlayer](#searchplayer)
     -   [pois](#pois)
     -   [isOnline](#isonline)
+    -   [isOnlineImproved](#isonlineimproved)
     -   [getFriends](#getfriends)
     -   [news](#news)
     -   [ets2News](#ets2news)
@@ -75,6 +76,7 @@ api.resolveVanityUrl("dowmeister").then( (response) => {
     -   [getPlayerInfoComplete](#getplayerinfocomplete)
     -   [ets2_cities](#ets2_cities)
     -   [ats_cities](#ats_cities)
+    -   [map_servers](#map_servers)
 -   [TruckyAPIResponse](#truckyapiresponse)
 
 ## TruckyAPIClient
@@ -121,6 +123,16 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 ### isOnline
 
 Check TruckersMP player online status
+
+**Parameters**
+
+-   `playerID` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** TruckersMP User ID
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[TruckyAPIResponse](#truckyapiresponse)>** 
+
+### isOnlineImproved
+
+Check TruckersMP player online status - With improved informations, mapped map server and calculated location
 
 **Parameters**
 
@@ -323,6 +335,12 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 ### ats_cities
 
 Get list of ATS cities, with coordinates and country
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[TruckyAPIResponse](#truckyapiresponse)>** 
+
+### map_servers
+
+Get Map servers list, mapped on API servers
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[TruckyAPIResponse](#truckyapiresponse)>** 
 

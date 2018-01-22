@@ -112,6 +112,20 @@ class TruckyAPIClient
     }
 
     /**
+     * Check TruckersMP player online status - With improved informations, mapped map server and calculated location
+     *
+     * @param {number} playerID TruckersMP User ID
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
+    async isOnlineImproved(playerID)
+    {
+        var response = await this.executeRequest('/v3/map/online?playerID=' + playerID);
+        return response;
+    }
+
+    /**
      * Get Steam Friends
      *
      * @param {string} steamID Steam User ID
