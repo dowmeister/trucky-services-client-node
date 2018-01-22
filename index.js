@@ -552,6 +552,19 @@ class TruckyAPIClient
         return response;
     }
 
+    /**
+     * Get Map servers list, mapped on API servers
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
+    async map_servers()
+    {
+        var response = await this.executeRequest('/v2/map/servers');
+        return response;
+    }
+
 }
 
 /**
