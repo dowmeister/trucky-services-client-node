@@ -579,6 +579,19 @@ class TruckyAPIClient
         return response;
     }
 
+    /**
+     * Search player online on map
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
+    async searchPlayerOnMap(query)
+    {
+        var response = await this.executeRequest('/v2/map/searchPlayer?query=' + query);
+        return response;
+    }
+
 }
 
 /**

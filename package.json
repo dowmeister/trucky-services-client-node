@@ -1,6 +1,6 @@
 {
   "name": "trucky-services-client",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Trucky APP REST API client",
   "main": "index.js",
   "scripts": {
