@@ -567,6 +567,19 @@ class TruckyAPIClient
     }
 
     /**
+     * Get list of all cities, with coordinates, country and game
+     *
+     * @returns {Promise<TruckyAPIResponse>}
+     * @memberof TruckyAPIClient
+     * @async
+     */
+    async cities_all()
+    {
+        var response = await this.executeRequest('/v2/map/cities/all');
+        return response;
+    }
+
+    /**
      * Get Map servers list, mapped on API servers
      *
      * @returns {Promise<TruckyAPIResponse>}
