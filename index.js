@@ -379,7 +379,7 @@ class TruckyAPIClient
      */
     async traffic_servers()
     {
-        var response = await this.executeRequest('/v2/traffic/servers');
+        var response = await this.executeRequest('/v2/traffic/servers?addAts=true');
         return response;
     }
 
