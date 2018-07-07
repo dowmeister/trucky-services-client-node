@@ -204,6 +204,13 @@ class TruckyAPIClient
         return response;
     }
 
+    async eventDetail(id)
+    {
+        var response = await this.executeRequest('/v2/events/detail?eventID=' + id);
+        return response;
+    }
+
+
     /**
      * Get TruckersMP servers
      *
