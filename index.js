@@ -200,7 +200,7 @@ class TruckyAPIClient
      */
     async events()
     {
-        var response = await this.executeRequest('/v2/events');
+        var response = await this.executeRequest('/v2/events/upcoming');
         return response;
     }
 
